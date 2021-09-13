@@ -45,7 +45,12 @@ namespace netcore_blog.Models.Services
 
         public IEnumerable<Post> GetLatestPosts(int max)
         {
-             
+            return Posts.OrderByDescending(x => x.Date).Take(max).ToList();
+        }
+
+        public IEnumerable<Post> GetPostsByDate(int year, int month)
+        {
+            Posts.Where(x => x.Date.Year == year && x.Date.Month == month).OrderByDescending(x => x.Date).ToList();
         }
     }
 }

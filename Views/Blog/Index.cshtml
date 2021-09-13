@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Post>
+
+var firstPost = Model.FirstOrDefault;
+<h2>Archivo</h2>
+<ul>
+    @foreach(var post in Model)
+    {
+        <li>
+            <h3>@post.Title</h3>
+            <div>Creado por @post.Author el @post.Date.ToShortDateString()</div>
+        </li>
+    }
+</ul>
