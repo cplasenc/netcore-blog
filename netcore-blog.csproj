@@ -5,4 +5,10 @@
     <RootNamespace>netcore_blog</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Update="Views\Blog\Index - Copy.cshtml.cs">
+      <DependentUpon>Index.cshtml.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

@@ -25,5 +25,19 @@ namespace netcore_blog.Controllers
             var posts = _blogServices.GetPostsByDate(year, month);
             return View(posts);
         }
+
+        [Route("blog/{slug}")]
+        public IActionResult ViewPost(string slug)
+        {
+            var post = _blogServices.GetPost(slug);
+            if(post == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return View(post);
+            }
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace netcore_blog.Models.Services
     {
         IEnumerable<Post> GetLatestPosts(int max);
         IEnumerable<Post> GetPostsByDate(int year, int month);
+        Post GetPost(string slug);
     }
 }

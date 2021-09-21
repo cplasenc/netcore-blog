@@ -52,5 +52,10 @@ namespace netcore_blog.Models.Services
         {
             Posts.Where(x => x.Date.Year == year && x.Date.Month == month).OrderByDescending(x => x.Date).ToList();
         }
+
+        public Post GetPost(string slug)
+        {
+            return Posts.FirstOrDefault(x => x.Slug.Equals(slug, StringComparison.CurrentCultureIgnoreCase)); 
+        }
     }
 }

@@ -1,13 +1,23 @@
 ﻿@model IEnumerable<Post>
-
 var firstPost = Model.FirstOrDefault;
 <h2>Archivo</h2>
-<ul>
-    @foreach(var post in Model)
+
+@{
+    var firstPost = Model.FirstOrDefault();
+    var index = 0;
+    if (firstPost != null)
     {
-        <li>
-            <h3>@post.Title</h3>
-            <div>Creado por @post.Author el @post.Date.ToShortDateString()</div>
-        </li>
+        <h3>@firstPost.Date.ToString("MMMM yyyy")</h3>
+        <ul>
+            @foreach (var post in Model)
+            {
+                string style = (index % 2 == 0) ? null : "background-color: #f5f5f5";
+                <li style="@style">
+                    <h3>@post.Title</h3>
+                    <div>Creado por @post.Author el @post.Date.ToShortDateString()</div>
+                </li>
+                index++;
+            }
+        </ul>
     }
-</ul>
+}
