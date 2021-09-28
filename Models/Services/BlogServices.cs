@@ -50,7 +50,7 @@ namespace netcore_blog.Models.Services
 
         public IEnumerable<Post> GetPostsByDate(int year, int month)
         {
-            Posts.Where(x => x.Date.Year == year && x.Date.Month == month).OrderByDescending(x => x.Date).ToList();
+            return Posts.Where(x => x.Date.Year == year && x.Date.Month == month).OrderByDescending(x => x.Date).ToList();
         }
 
         public Post GetPost(string slug)

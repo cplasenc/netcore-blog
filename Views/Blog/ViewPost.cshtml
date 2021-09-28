@@ -1,0 +1,14 @@
+﻿@model Post
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<h2>@Model.Title</h2>
+<div class="post-body">
+    @Model.Text
+</div>
+<div>
+    Enviado por @Model.Author
+    el @Model.Date.ToString("d")
+</div>
